@@ -7,7 +7,7 @@
 // Need some preamble to get TOC:
 {empty}
 
-== Create user
+=== Create user
 
 .Setting Password for MySQL Root User
 [source,bash]
@@ -33,7 +33,7 @@ SET PASSWORD FOR joebob@"%"=PASSWORD('nochange');
 CREATE DATABASE mydb;
 USE mydb;
 
-== Backup
+=== Backup
 
 .Делаем бекап
 [source,bash]
@@ -95,3 +95,10 @@ TIP: Для таблиц InnoDB надо добавлять +--single-transactio
 [source, bash]
 ssh -fNL LOCAL_PORT:localhost:3306 REMOTE_USER@REMOTE_HOST
 
+=== Optimisation
+
+.Log slow queries
+добавить следующие строки в */etc/my.cnf*:
+[source,properties]
+log-slow-queries=/tmp/slow_queries.log
+long_query_time=10
