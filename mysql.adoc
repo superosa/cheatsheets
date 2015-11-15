@@ -29,7 +29,7 @@ SET PASSWORD FOR joebob@localhost=PASSWORD('nochange');
 SET PASSWORD FOR joebob@"%"=PASSWORD('nochange');
 
 .Create a Database
-[source,mysql]
+[source,sql]
 CREATE DATABASE mydb;
 USE mydb;
 
