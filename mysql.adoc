@@ -38,9 +38,9 @@ USE mydb;
 mysql -u root -p
 
 [source,sql]
-mysql> use mysql;
-mysql> update user set password=PASSWORD('NEW-PASSWORD-HERE') where User='John';
-mysql> flush privileges;
+use mysql;
+update user set password=PASSWORD('NEW-PASSWORD-HERE') where User='John';
+flush privileges;
 
 === Backup
 
