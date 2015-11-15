@@ -10,7 +10,7 @@
 === Create user
 
 .Setting Password for MySQL Root User
-[source,bash]
+[source,sql]
 /usr/bin/mysqladmin -u root password 'new-password'
 /usr/bin/mysqladmin -u root -h `hostname` password 'new-password'
 
@@ -102,3 +102,11 @@ ssh -fNL LOCAL_PORT:localhost:3306 REMOTE_USER@REMOTE_HOST
 [source,properties]
 log-slow-queries=/tmp/slow_queries.log
 long_query_time=10
+
+.Записывать в лог медленные административные операторы такие, как *OPTIMIZE TABLE*, *ANALYZE TABLE*, и *ALTER TABLE*.
+[source,properties]
+–log-slow-admin-statements
+
+Если вы используете эту опцию вместе с *–log-slow-queries*, запросы, которые не используют индексы, будут записываться в лог медленных запросов.
+[source,properties]
+–log-queries-not-using-indexes
