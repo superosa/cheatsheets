@@ -7,6 +7,32 @@
 // Need some preamble to get TOC:
 {empty}
 
+== Create user
+
+.Setting Password for MySQL Root User
+[source,bash]
+/usr/bin/mysqladmin -u root password 'new-password'
+/usr/bin/mysqladmin -u root -h `hostname` password 'new-password'
+
+.Creating User Accounts
+[source,bash]
+CREATE USER user;
+
+.Adding Grants
+[source,bash]
+GRANT ALL ON mydb.* TO joebob@localhost;
+GRANT ALL ON mydb.* TO joebob@"%";
+
+.Setting Password for Other Users
+[source,bash]
+SET PASSWORD FOR joebob@localhost=PASSWORD('nochange');
+SET PASSWORD FOR joebob@"%"=PASSWORD('nochange');
+
+.Create a Database
+[source,bash]
+CREATE DATABASE mydb;
+USE mydb;
+
 == Backup
 
 .Делаем бекап
@@ -67,3 +93,4 @@ TIP: Для таблиц InnoDB надо добавлять +--single-transactio
 .проброс портов
 [source, bash]
 ssh -fNL LOCAL_PORT:localhost:3306 REMOTE_USER@REMOTE_HOST
+
