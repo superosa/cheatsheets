@@ -10,26 +10,26 @@
 === Create user
 
 .Setting Password for MySQL Root User
-[source,bash]
+[source,sql]
 /usr/bin/mysqladmin -u root password 'new-password'
 /usr/bin/mysqladmin -u root -h `hostname` password 'new-password'
 
 .Creating User Accounts
-[source,bash]
+[source,sql]
 CREATE USER user;
 
 .Adding Grants
-[source,bash]
+[source,sql]
 GRANT ALL ON mydb.* TO joebob@localhost;
 GRANT ALL ON mydb.* TO joebob@"%";
 
 .Setting Password for Other Users
-[source,bash]
+[source,sql]
 SET PASSWORD FOR joebob@localhost=PASSWORD('nochange');
 SET PASSWORD FOR joebob@"%"=PASSWORD('nochange');
 
 .Create a Database
-[source,bash]
+[source,sql]
 CREATE DATABASE mydb;
 USE mydb;
 
