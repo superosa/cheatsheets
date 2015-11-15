@@ -10,7 +10,7 @@
 === Create user
 
 .Setting Password for MySQL Root User
-[source,sql]
+[source,bash]
 /usr/bin/mysqladmin -u root password 'new-password'
 /usr/bin/mysqladmin -u root -h `hostname` password 'new-password'
 
@@ -29,7 +29,7 @@ SET PASSWORD FOR joebob@localhost=PASSWORD('nochange');
 SET PASSWORD FOR joebob@"%"=PASSWORD('nochange');
 
 .Create a Database
-[source,sql]
+[source,mysql]
 CREATE DATABASE mydb;
 USE mydb;
 
