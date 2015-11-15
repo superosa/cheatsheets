@@ -33,6 +33,15 @@ SET PASSWORD FOR joebob@"%"=PASSWORD('nochange');
 CREATE DATABASE mydb;
 USE mydb;
 
+.Password change
+[source,sh]
+mysql -u root -p
+
+[source,sql]
+mysql> use mysql;
+mysql> update user set password=PASSWORD('NEW-PASSWORD-HERE') where User='John';
+mysql> flush privileges;
+
 === Backup
 
 .Делаем бекап
